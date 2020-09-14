@@ -1,0 +1,10 @@
+mywebapp: 
+app
+envi-file:
+"nginx.env"
+healthcheck:
+test: "${DOCKER_HEALTHCHECK_TEST:-curl localhost:8000/healthy}"
+      interval: "5s"
+      timeout: "1s"
+      start_period: "1s"
+      retries: 1
